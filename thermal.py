@@ -1,7 +1,7 @@
-'''TEMPERATURA CPU CADA SEGUNDO'''
+'''CPU TEMPERATURE PER SECOND'''
 from time import sleep
 import sys
-print("----^C to exit----")
+print("----------^C to exit----------")
 while True:
         try:
                 with open("/sys/class/thermal/thermal_zone0/temp") as f:
@@ -11,4 +11,3 @@ while True:
                 print("Quitting..")
                 sys.exit()
 
-#para finalizar el programa ctrl C
