@@ -27,6 +27,10 @@ while True:
                 if os.getuid() != 0:
                     print("This script requires sudo privileges, Quitting...")
                     sys.exit()
+                elif Path('/sys/devices/system/cpu/cpu2/cpufreq/cpuinfo_cur_freq').exists() == false:
+                    print("Your CPU is DualCore, please run the DualCore script...")
+                    print("Quitting...")
+                    sys.exit()
                 else:
                     print("Quitting...")
                     sys.exit()
