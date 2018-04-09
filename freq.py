@@ -26,7 +26,7 @@ while True:
                         print("<><><><><>--Measure number {}--<><><><><><>\n".format(medida))
                         for i in range(0,len(cores)):
                                 # // 1000 if your cpu is in a non decimal range of frequency
-                                print("> Core{} CPU frequency in Mhz: {}".format(i+ 1, cores[i] / 1000]))
+                                print("> Core{} CPU frequency in Mhz: {}".format(i+ 1, cores[i] / 1000))
                         print("<><><><><><><><><><><><><><><><><><><><><>\n\n\n")
                         sleep(1.5)
                         
