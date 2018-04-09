@@ -3,7 +3,9 @@ Simple Python scripts to monitor your cpu frequency and temperature on linux.
 Scripts that measure frequency requires sudo privileges
 
 #MAKE THE SCRIPTS GLOBAL
+
 1-The path to the python interpreter may vary so in the first line of the python scripts change it to your path o python interpreter
+        In my case it is #!/usr/bin/python3
 
 2-Make the file executable(type in the terminal):
       sudo chmod +x file.py 
