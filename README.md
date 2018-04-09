@@ -1,5 +1,6 @@
 # Linuxcpu-freq-temp
 Simple Python scripts to monitor your cpu frequency and temperature on linux.
+
 Scripts that measure frequency requires sudo privileges
 
 ##MAKE THE SCRIPTS GLOBAL##
@@ -24,4 +25,4 @@ Scripts that measure frequency requires sudo privileges
       
 5-DONE! Now you can just type in the terminal the name of the python script and it will run.
 
-***I recommend to make an alias in ~/.bashrc so you can just type the word frequency and it will run the python script so it looks more natural.***
+***I recommend making an alias in ~/.bashrc so you can just type the word frequency and it will run the python script, it looks more natural.***
