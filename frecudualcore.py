@@ -3,8 +3,14 @@
 import os
 from time import sleep
 import sys
+from pathlib import Path
 print("-----^C to exit-----\n")
 medida = 0
+if Path('/sys/devices/system/cpu/cpu2/cpufreq/cpuinfo_cur_freq').exists() == True:
+    print("Your CPU is QuadCore.\nPlease run the QuadCore script if you want to check all your cores...")
+
+
+
 while True:
         try:
                 with open("/sys/devices/system/cpu/cpu0/cpufreq/cpuinfo_cur_freq") \
