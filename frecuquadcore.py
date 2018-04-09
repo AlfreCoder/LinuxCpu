@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 '''Measure of a quadcore cpu frecuency, requires SUDO privileges'''
 import os
+from pathlib import Path
 from time import sleep
 import sys
 print("-----^C to exit-----\n")
