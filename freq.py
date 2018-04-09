@@ -1,6 +1,6 @@
 #!/usr/bin/python3
-'''Measure the Frequency of dual-cores and quad-cores processors'''
-import os, sys
+'''Measure the frequency in dual-core and quad-core processors each 1.5 seconds'''
+import os, sys, subprocess
 from time import sleep
 from pathlib import Path
 print("****************^C to exit****************\n")
@@ -10,11 +10,11 @@ path0 = Path('/sys/devices/system/cpu/cpu0/cpufreq/cpuinfo_cur_freq')
 path1 = Path('/sys/devices/system/cpu/cpu1/cpufreq/cpuinfo_cur_freq')
 path2 = Path('/sys/devices/system/cpu/cpu2/cpufreq/cpuinfo_cur_freq')
 path3 = Path('/sys/devices/system/cpu/cpu3/cpufreq/cpuinfo_cur_freq')
-if path2.exists() == False:
-    print("Checking frequency in a DualCore Processor...\n")
-elif path2.exists():
-    print("Checking frequency in a QuadCore Processor...\n")
-
+cpuinfo, result  = subprocess.getstatusoutput("lscpu")
+print("Checking CPU info...\n")
+for i in result.split(os.linesep):
+    print(i)
+print("")
 while True:
     if path2.exists() == False:
         try:
@@ -25,8 +25,7 @@ while True:
                         medida += 1
                         print("<><><><><>--Measure number {}--<><><><><><>\n".format(medida))
                         for i in range(0,len(cores)):
-                                # // 1000 if your cpu is in a non decimal range of frequency
-                                print("> Core{} CPU frequency in Mhz: {}".format(i+ 1, cores[i] / 1000))
+                                print("> Core{} CPU frequency in Mhz: {}\n".format(i+ 1, cores[i] / 1000))
                         print("<><><><><><><><><><><><><><><><><><><><><>\n\n\n")
                         sleep(1.5)
                         
@@ -48,8 +47,8 @@ while True:
                     cores = [core0, core1, core2, core3]
                     medida += 1
                     print("<><><><><>--Measure number {}--<><><><><><>\n".format(medida))
-                    for i in range(0,len(cores)):
-                            print("> Core{} CPU frequency in Mhz: {}".format(i+ 1, cores[i] / 1000))
+                    for i in range(0,len(cores)):                                           
+                            print("> Core{} CPU frequency in Mhz: {}\n".format(i+ 1, cores[i] / 1000))
                     print("<><><><><><><><><><><><><><><><><><><><><>\n\n\n")
                     sleep(1.5)
                         
@@ -60,3 +59,5 @@ while True:
             else:
                 print("Quitting...")
                 sys.exit()
+            
+            
